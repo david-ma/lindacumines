@@ -1,0 +1,296 @@
+/*! thalia v3.1.0 | (c) 2020  | ISC License | git+https://github.com/david-ma/Thalia.git */
+@font-face {
+  font-family: 'Raleway';
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Raleway-regular/Raleway-regular.eot");
+  src: url("/fonts/Raleway-regular/Raleway-regular.eot?#iefix") format("embedded-opentype"), local("Raleway"), local("Raleway-regular"), url("/fonts/Raleway-regular/Raleway-regular.woff2") format("woff2"), url("/fonts/Raleway-regular/Raleway-regular.woff") format("woff"), url("/fonts/Raleway-regular/Raleway-regular.ttf") format("truetype"), url("/fonts/Raleway-regular/Raleway-regular.svg#Raleway") format("svg");
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Lora-regular/Lora-regular.eot");
+  src: url("/fonts/Lora-regular/Lora-regular.eot?#iefix") format("embedded-opentype"), local("Lora"), local("Lora-regular"), url("/fonts/Lora-regular/Lora-regular.woff2") format("woff2"), url("/fonts/Lora-regular/Lora-regular.woff") format("woff"), url("/fonts/Lora-regular/Lora-regular.ttf") format("truetype"), url("/fonts/Lora-regular/Lora-regular.svg#Lora") format("svg");
+}
+
+/* line 29, websites/lindacumines/src/css/linda.scss */
+body {
+  font-family: 'Lato', Helvetica, serif;
+  background-color: white;
+  font-size: 16px;
+}
+
+/* line 35, websites/lindacumines/src/css/linda.scss */
+.page {
+  background-color: white;
+  height: 100%;
+}
+
+/* line 40, websites/lindacumines/src/css/linda.scss */
+.contact {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* line 44, websites/lindacumines/src/css/linda.scss */
+.topleft {
+  padding: 14px;
+}
+
+/* line 48, websites/lindacumines/src/css/linda.scss */
+.topright {
+  padding: 14px;
+  text-align: right;
+}
+
+/* line 53, websites/lindacumines/src/css/linda.scss */
+.topright #topPhone {
+  border: solid 1px red;
+  margin: 5px;
+  padding: 5px;
+}
+
+/* line 57, websites/lindacumines/src/css/linda.scss */
+.topright #topPhone img {
+  height: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 64, websites/lindacumines/src/css/linda.scss */
+  .topright {
+    padding-top: 0;
+  }
+  /* line 67, websites/lindacumines/src/css/linda.scss */
+  .topright ul {
+    margin-top: 0;
+  }
+}
+
+/* line 73, websites/lindacumines/src/css/linda.scss */
+h1 {
+  line-height: 25px;
+  padding-top: 40px;
+  margin-bottom: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 45px;
+  font-weight: 300;
+  margin: 0;
+  color: #FF473B;
+}
+
+/* line 83, websites/lindacumines/src/css/linda.scss */
+h2 {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #919191;
+}
+
+/* line 90, websites/lindacumines/src/css/linda.scss */
+.contact h2 {
+  white-space: nowrap;
+}
+
+/* line 94, websites/lindacumines/src/css/linda.scss */
+.topright ul {
+  white-space: nowrap;
+  list-style: none;
+}
+
+/* line 99, websites/lindacumines/src/css/linda.scss */
+header {
+  width: 100%;
+  height: 330px;
+  background: #333e52 url("/images/blueberries.jpg");
+  background-size: cover;
+}
+
+/* line 106, websites/lindacumines/src/css/linda.scss */
+#blueberries {
+  transform: scaleX(-1);
+}
+
+/* line 109, websites/lindacumines/src/css/linda.scss */
+#blueberries .mask {
+  transform: scaleX(-1);
+}
+
+/* line 115, websites/lindacumines/src/css/linda.scss */
+.mask {
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+}
+
+/* line 120, websites/lindacumines/src/css/linda.scss */
+header h1 {
+  color: #eee;
+  position: relative;
+  top: 100px;
+}
+
+/* line 126, websites/lindacumines/src/css/linda.scss */
+header h2 {
+  color: #ddd;
+  position: relative;
+  top: 110px;
+  font-size: 18px;
+}
+
+/* line 133, websites/lindacumines/src/css/linda.scss */
+.core_services {
+  margin-top: 15px;
+  color: #efefef;
+  background: #df252a;
+  background: #df252a url("/images/service_2.png") no-repeat right;
+  background-position: 90%;
+}
+
+/* line 141, websites/lindacumines/src/css/linda.scss */
+.core_services ul {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.2em;
+}
+
+/* line 147, websites/lindacumines/src/css/linda.scss */
+.core_services h1 {
+  font-family: 'Lora', serif;
+  color: white;
+  font-size: 22px;
+  padding: 0;
+  text-align: center;
+}
+
+/* line 155, websites/lindacumines/src/css/linda.scss */
+#apd_logo {
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  padding-right: 15px;
+  background: white;
+  width: 130px;
+  float: left;
+}
+
+/* line 164, websites/lindacumines/src/css/linda.scss */
+#apd_logo_orange {
+  padding: 15px 0;
+  background: white;
+  width: 100%;
+}
+
+/* line 170, websites/lindacumines/src/css/linda.scss */
+.statement p {
+  font-size: 16px;
+  color: #5e5e5e;
+}
+
+/* line 176, websites/lindacumines/src/css/linda.scss */
+.details h1 {
+  padding: 15px;
+  text-align: center;
+}
+
+/* line 180, websites/lindacumines/src/css/linda.scss */
+.details table {
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  background: #eee;
+}
+
+/* line 186, websites/lindacumines/src/css/linda.scss */
+.details table td {
+  padding: 5px 15px;
+}
+
+/* line 190, websites/lindacumines/src/css/linda.scss */
+.details table tr:first-child {
+  text-align: center;
+}
+
+/* line 194, websites/lindacumines/src/css/linda.scss */
+.details table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* line 197, websites/lindacumines/src/css/linda.scss */
+.details table td:nth-child(even) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* line 201, websites/lindacumines/src/css/linda.scss */
+footer {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(#959597, #1b2463);
+}
+
+/* line 206, websites/lindacumines/src/css/linda.scss */
+footer img {
+  display: inherit;
+  margin: auto;
+  width: 100px;
+  top: 130px;
+}
+
+/* line 212, websites/lindacumines/src/css/linda.scss */
+footer ul {
+  padding: 30px;
+  color: #efefef;
+  text-align: right;
+  list-style: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+
+/* line 220, websites/lindacumines/src/css/linda.scss */
+footer ul li:first-child {
+  font-size: 24px;
+}
+
+/* line 223, websites/lindacumines/src/css/linda.scss */
+footer ul li a {
+  color: #3b9fff;
+  text-decoration: underline;
+}
+
+/* line 227, websites/lindacumines/src/css/linda.scss */
+#footer_cherry {
+  height: 100%;
+  background: rgba(0, 0, 0, 0) url("/images/Cherry_logo2019.png") no-repeat;
+  background-position: 50% 90%;
+  background-size: 120px;
+}
+
+/* line 236, websites/lindacumines/src/css/linda.scss */
+#workinghours {
+  margin-top: 15px;
+  padding: 20px 0;
+  background: #3e424c;
+  color: #eaebed;
+}
+
+/* line 241, websites/lindacumines/src/css/linda.scss */
+#workinghours h3 {
+  margin: 0;
+}
+
+/* line 249, websites/lindacumines/src/css/linda.scss */
+#specialty-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* line 252, websites/lindacumines/src/css/linda.scss */
+#specialty-list ul li {
+  list-style: none;
+  border-bottom: solid 1px lightgrey;
+}
+
+/* line 255, websites/lindacumines/src/css/linda.scss */
+#specialty-list ul li img {
+  height: 35px;
+  padding: 8px 5px;
+}

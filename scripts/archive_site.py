@@ -228,6 +228,12 @@ class HtmlRewriter(HTMLParser):
 class StaticCleanup(HTMLParser):
     """Remove WordPress controls that cannot work on a static host."""
 
+    SCROLL_STYLE = (
+        '<style id="static-archive-scroll-style">'
+        'html{scroll-behavior:auto!important}'
+        '.static-archive-anchor{display:block;height:0;scroll-margin-top:90px}'
+        '</style>'
+    )
     VIDEO_STYLE = (
         '<style id="static-archive-video-style">'
         '.static-archive-video-row{position:relative;overflow:hidden}'
@@ -238,13 +244,15 @@ class StaticCleanup(HTMLParser):
         '</style>'
     )
 
-    def __init__(self, video_styles_needed: bool = False) -> None:
+    def __init__(self, video_styles_needed: bool = False, scroll_styles_needed: bool = True) -> None:
         super().__init__(convert_charrefs=False)
         self.output: list[str] = []
         self.skip_tag: str | None = None
         self.skip_depth = 0
         self.in_style = False
         self.video_styles_needed = video_styles_needed
+        self.scroll_styles_needed = scroll_styles_needed
+        self.seen_anchors: set[str] = set()
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if self.skip_tag:
@@ -265,6 +273,12 @@ class StaticCleanup(HTMLParser):
             self.skip_tag, self.skip_depth = "script", 1
         else:
             raw = self.get_starttag_text()
+            anchor = values.get("data-anchor") if tag == "div" else None
+            if anchor and re.fullmatch(r"[A-Za-z][A-Za-z0-9_-]*", anchor):
+                if anchor not in self.seen_anchors:
+                    self.output.append(f'<span id="{anchor}" class="static-archive-anchor"></span>')
+                    self.seen_anchors.add(anchor)
+                raw = re.sub(r"\s+data-anchor\s*=\s*(?:\"[^\"]*\"|'[^']*'|[^\s>]+)", "", raw, count=1, flags=re.I)
             video_url = values.get("data-tbfullwidthvideo") if tag == "div" else None
             already_static = "static-archive-video-row" in (values.get("class") or "").split()
             if video_url and not already_static:
@@ -297,8 +311,11 @@ class StaticCleanup(HTMLParser):
                 if self.skip_depth == 0:
                     self.skip_tag = None
             return
-        if tag == "head" and self.video_styles_needed:
-            self.output.append(self.VIDEO_STYLE)
+        if tag == "head":
+            if self.video_styles_needed:
+                self.output.append(self.VIDEO_STYLE)
+            if self.scroll_styles_needed:
+                self.output.append(self.SCROLL_STYLE)
         self.output.append(f"</{tag}>")
         if tag == "style":
             self.in_style = False
@@ -537,7 +554,8 @@ def finalize_existing(output: Path) -> None:
     for path in output.rglob("*.html"):
         original = path.read_text(encoding="utf-8")
         cleanup = StaticCleanup(video_styles_needed=("data-tbfullwidthvideo" in original
-                                                     and 'id="static-archive-video-style"' not in original))
+                                                     and 'id="static-archive-video-style"' not in original),
+                                scroll_styles_needed='id="static-archive-scroll-style"' not in original)
         cleanup.feed(original)
         rendered = "".join(cleanup.output)
         if rendered != original:

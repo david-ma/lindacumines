@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://lindacumines.com.au/sitemap.xml

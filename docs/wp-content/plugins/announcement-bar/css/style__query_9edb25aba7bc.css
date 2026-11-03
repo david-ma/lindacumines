@@ -1,0 +1,1037 @@
+/************************************************************************************
+GENERAL STYLING
+*************************************************************************************/
+/* icon font */
+@font-face{
+	font-family:'announcement';
+	src:url('fonts/announcement.woff2') format('woff2'),
+		url('fonts/announcement.woff') format('woff');
+	font-display:swap;
+	font-weight:normal;
+	font-style:normal
+}
+body{
+	margin:0;
+	padding:0
+}
+body.announcement-bar-showing{
+	overflow:unset!important;
+    overflow-x: hidden
+}
+.themify_announcement del{
+	color:inherit
+}
+.themify_announcement hr{
+	height:1px;
+	border:none;
+	border-top:solid 1px #ccc;
+	border-color:rgba(0,0,0,.1);
+	margin:.5em 0;
+	clear:both
+}
+
+/* heading */
+.themify_announcement h1,
+.themify_announcement h2,
+.themify_announcement h3,
+.themify_announcement h4,
+.themify_announcement h5,
+.themify_announcement h6{
+	margin:0 0 .3em;
+	color:inherit
+}
+.themify_announcement h1{
+	font-size:1.8em
+}
+.themify_announcement h2{
+	font-size:1.6em
+}
+.themify_announcement h3{
+	font-size:1.4em
+}
+.themify_announcement h4{
+	font-size:1.3em
+}
+.themify_announcement h5{
+	font-size:1.2em
+}
+.themify_announcement h6{
+	font-size:1.1em
+}
+
+/* themify_announcement general */
+.themify_announcement{
+	font-size:1.05em;
+	line-height:1.5;
+	overflow-wrap:break-word;
+	background:#fff8c1;
+	color:rgba(0,0,0,.7);
+	border-radius:10px;
+	display:none; /* hide initially, will show by js */
+	box-sizing:border-box	
+}
+.themify_announcement a{
+	color:#e74c3c;
+	text-decoration:none
+}
+.themify_announcement .announcement_title{
+	background:#e74c3c;
+	color:#fff;
+	padding:.35em .5em .35em .6em;
+	display:inline-block;
+	vertical-align:top;
+	margin:0 1em 0 0;
+	position:relative;
+	border-radius:8px;
+	font-family:'oswald';
+	text-transform:uppercase;
+	letter-spacing: .04em;
+	line-height:120%;
+	margin:0 .8em 0 0;
+}
+.themify_announcement .announcement_title a{
+	color:#fff
+}
+.themify_announcement .announcement_title:after{
+	position:absolute;
+	content:' ';
+	width:0;
+	height:0;
+	top:50%;
+	right:-7px;
+	margin-top:-8px;
+	border-left-color:#e74c3c;
+	border-left-style:solid;
+	border-left-width:8px;
+	border-top:8px solid transparent;
+	border-bottom:8px solid transparent
+}
+.themify_announcement .announcement_content{
+	margin:4px 0 0 0;
+	display:inline-block;
+	vertical-align:top
+}
+/* POSITION
+================================================ */
+.themify_announcement.bar.announcement_bottom{
+	position:fixed;
+	top:auto;
+	bottom:0
+}
+.admin-bar .themify_announcement.bar.announcement_top{
+	top:32px
+}
+.themify_announcement .announcement_list{
+	margin:0!important;
+	padding:0!important
+}
+.themify_announcement .announcement_list > li{
+	float:left!important;
+	position:relative!important;
+	clear:none!important;
+	display:block!important;
+	margin:0!important;
+	padding:0!important;
+	list-style:none!important;
+	border:none!important;
+	background:none!important
+}
+.themify_announcement .announcement_post{
+	overflow:hidden
+}
+/* action button */
+.themify_announcement .announcement_post a.action-button{
+	background:#e74c3c;
+	color:#fff;
+	font-size:.9em;
+	line-height:100%;
+	text-transform:uppercase;
+	padding:4px 10px;
+	text-decoration:none;
+	margin-left:1.1em;
+	padding:.4em .7em;
+	font-weight:bold;
+	display:inline-block;
+	vertical-align:middle;
+	border-radius:3px;
+	white-space:nowrap
+}
+/* FONTS
+================================================ */
+.themify_announcement.serif,
+.themify_announcement.serif .announcement_title{
+	font-family:Georgia,serif
+}
+.themify_announcement.old-style,
+.themify_announcement.old-style .announcement_title{
+	font-family:'EB Garamond',serif
+}
+.themify_announcement.slab-serif,
+.themify_announcement.slab-serif .announcement_title{
+	font-family:'Roboto Slab',serif
+}
+.themify_announcement.script,
+.themify_announcement.script .announcement_title{
+	font-family:'Kaushan Script',cursive
+}
+.themify_announcement .carousel-nav-wrap .carousel-next:before,
+.themify_announcement .carousel-nav-wrap .carousel-prev:after,
+.themify_announcement .more-link:after,
+.themify_announcement .close,
+.themify_announcement .toggle-close{
+	font-family:'announcement'
+}
+/* ANNOUNCEMENT BAR
+================================================ */
+.themify_announcement.bar .announcement_container{
+	width:1200px;
+	max-width:100%;
+	margin:0 auto;
+	position:relative;
+}
+.themify_announcement.bar{
+	margin:0;
+	padding:8px 0;
+	width:100%;
+	position:-webkit-sticky;
+	position:sticky;
+	top:0;
+	left:0;
+	z-index:2000;
+	border-radius:0;
+	box-shadow:inset 0 -1px 0 rgba(0,0,0,.05);
+}
+.themify_announcement.bar .announcement_content{
+	margin:4px 80px 0 0;
+}
+
+/* TEXT ALIGNMENT
+================================================ */
+.themify_announcement.textleft .announcement_post{
+	text-align:left
+}
+.themify_announcement.textright .announcement_post{
+	text-align:right
+}
+.themify_announcement.textcenter .announcement_post{
+	text-align:center
+}
+/* DESIGN STYLE
+================================================ */
+/* white */
+.themify_announcement.white{
+	background:#fff
+}
+
+/* yellow */
+.themify_announcement.yellow{
+	background:#fff154
+}
+
+/* blue */
+.themify_announcement.blue{
+	background:#9fe1fb
+}
+
+/* green */
+.themify_announcement.green{
+	background:#c6ea80
+}
+
+/* orange */
+.themify_announcement.orange{
+	background:#ffba00;
+	color:#fff
+}
+
+/* pink */
+.themify_announcement.pink{
+	background:#ffc7f3
+}
+
+/* purple */
+.themify_announcement.purple{
+	background:#874fb7
+}
+.themify_announcement.purple .announcement_title,
+.themify_announcement.purple .announcement_title a,
+.themify_announcement.purple .announcement_post a.action-button{
+	background:#ffea00;
+	color:#000
+}
+.themify_announcement.purple .announcement_post{
+	color:rgba(255,255,255,.7)
+}
+.themify_announcement.purple a{
+	color:#ffea00
+}
+.themify_announcement.purple .announcement_title:after{
+	border-left-color:#ffea00
+}
+
+/* gray */
+.themify_announcement.gray{
+	background:#797f82
+}
+.themify_announcement.gray .announcement_title{
+	color:#fff
+}
+.themify_announcement.gray .announcement_title,
+.themify_announcement.gray .announcement_title a,
+.themify_announcement.gray .announcement_post a.action-button{
+	background:#ffea00;
+	color:#000
+}
+.themify_announcement.gray .announcement_post{
+	color:rgba(255,255,255,.7)
+}
+.themify_announcement.gray a{
+	color:#fff
+}
+.themify_announcement.gray .announcement_title:after{
+	border-left-color:#ffea00
+}
+
+/* black */
+.themify_announcement.black{
+	background:#000
+}
+.themify_announcement.black .announcement_title{
+	color:#fff
+}
+.themify_announcement.black .announcement_post{
+	color:rgba(255,255,255,.7)
+}
+.themify_announcement.black a{
+	color:#fff
+}
+.themify_announcement.black .timer,
+.themify_announcement.black .carousel-pager a{
+	background:rgba(255,255,255,.5)
+}
+.themify_announcement.black .carousel-pager a.selected{
+	background:#fff
+}
+.themify_announcement.black .carousel-nav-wrap .carousel-prev:after,
+.themify_announcement.black .carousel-nav-wrap .carousel-next:before,
+.themify_announcement.black .close{
+	color:rgba(255,255,255,.5)
+}
+.themify_announcement.black .close:hover{
+	color:#fff
+}
+.themify_announcement.black .timer-bar{
+	background:rgba(255,255,255,.3)
+}
+
+/* paper */
+.themify_announcement.paper{
+	background-image:url('images/paper.png');
+	box-shadow:inset 0 -2px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.2)
+}
+
+/* clip */
+.themify_announcement.clip{
+	background-image:url('images/paper.png');
+	padding:5px 0;
+	margin-top:19px;
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 -1px 0 rgba(0,0,0,.1), 0 1px 0 rgba(0,0,0,.1)
+}
+.themify_announcement.clip:before{
+	background:url('images/clip.png');
+	position:absolute;
+	top:-19px;
+	left:10px;
+	width:50px;
+	height:70px;
+	content:''
+}
+.themify_announcement.clip.collapsed{
+	margin-top:0
+}
+.themify_announcement.clip.collapsed:before{
+	display:none; /* hide clip icon */
+}
+
+/* bookmark */
+.themify_announcement.bookmark{
+	padding-left:30px;
+}
+.themify_announcement.bookmark.shortcode,
+.themify_announcement.bookmark.widget{
+	padding-left:45px;
+	padding-top:15px
+}
+.themify_announcement.bookmark:before{
+	background:url('images/bookmark.png');
+	position:absolute;
+	top:0;
+	left:10px;
+	width:23px;
+	height:51px;
+	content:'';
+	z-index:100
+}
+.themify_announcement.bookmark.collapsed:before{
+	display:none; /* hide bookmark icon */
+}
+/* notes */
+.themify_announcement.notes{
+	background-image:url('images/bg-note.png');
+	box-shadow:inset 0 -2px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.2)
+}
+/* MORE CONTENT
+================================================ */
+/* more button */
+.themify_announcement .more-link{
+	text-decoration:none!important;
+	margin-left:10px;
+	font-size:.889em;
+	text-transform:uppercase;
+	color:#000;
+	font-weight:bold;
+	transition:.3s
+}
+.themify_announcement .more-link:hover{
+	text-decoration:none!important;
+	opacity:.8
+}
+.themify_announcement .more-link:after{
+	content:"\64";
+	text-transform:lowercase;
+	font-size:.8em;
+	display:inline-block;
+	vertical-align:middle;
+	border:none;
+	margin-left:8px;
+	transform:none
+}
+.themify_announcement .more-link.active:after{
+	content:"\75"
+}
+
+/* more wrap */
+.themify_announcement .more_wrap{
+	display:none; /* toggle with js */
+	margin:1em 0 .5em;
+	clear:both;
+	font-size:.8em;
+	font-weight:normal;
+	line-height:1.6em
+}
+.themify_announcement .more_wrap p{
+	margin:0 0 1.2em
+}
+/* CAROUSEL
+================================================ */
+/* slider nav */
+.themify_announcement .carousel-nav-wrap{
+	text-align:center;
+	line-height:100%
+}
+.themify_announcement.bar .carousel-nav-wrap{
+	position:absolute;
+	top:10px;
+	right:20px
+}
+.themify_announcement.bar.textright .carousel-nav-wrap{
+	position:absolute;
+	right:auto;
+	left:20px
+}
+.themify_announcement .carousel-nav-wrap .carousel-prev,
+.themify_announcement .carousel-nav-wrap .carousel-next{
+	display:inline-block;
+	vertical-align:middle
+}
+.themify_announcement .carousel-nav-wrap .carousel-next{
+	padding-left:3px
+}
+
+/* carousel nav disabled */
+.themify_announcement .carousel-nav-wrap .disabled,
+.themify_announcement .carousel-nav-wrap .disabled{
+	opacity:6; 
+	cursor:default
+}
+/* carousel pager */
+.themify_announcement .carousel-pager{
+	clear:both;
+	text-align:center;
+	display:inline-block;
+	vertical-align:middle;
+	line-height:100%;
+	width:auto;
+	margin-top:-4px
+}
+.themify_announcement .carousel-pager a{
+	text-indent:-900em;
+	width:3px;
+	height:3px;
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 1px;
+	background:rgba(0,0,0,.2);
+	border-radius:10em;
+	cursor:pointer
+}
+.themify_announcement .carousel-pager a.selected{
+	background:#000
+}
+/* arrows */
+.themify_announcement .carousel-nav-wrap .carousel-prev,
+.themify_announcement .carousel-nav-wrap .carousel-next{
+	color:transparent;
+	line-height:100%
+}
+.themify_announcement .carousel-nav-wrap .carousel-prev:after,
+.themify_announcement .carousel-nav-wrap .carousel-next:before{
+	color:rgba(0,0,0,.4)
+}
+.themify_announcement .carousel-nav-wrap .carousel-prev:after{
+	content:"\6c";
+	margin-right:5px
+}
+.themify_announcement .carousel-nav-wrap .carousel-next:before{
+	content:"\72"
+}
+/* CLOSE BUTTON
+================================================ */
+.themify_announcement .close{
+	display:block;
+	position:absolute;
+	top:10px;
+	right:0;
+	line-height:1em;
+	cursor:pointer;
+	color:rgba(0,0,0,.4);
+	text-decoration:none;
+	transition:.3s
+}
+.themify_announcement.textright .close{
+	left:0;
+	right:auto
+}
+.themify_announcement .close:hover{
+	color:#000
+}
+/* toggle-close button */
+.themify_announcement .toggle-close{
+	background:#E74C3C;
+	display:none;
+	height:34px;
+	width:38px;
+	text-align:center;
+	line-height:34px;
+	position:absolute;
+	right:0;
+	color:#fff;
+	border-radius:0 0 8px 8px
+}
+.themify_announcement.bar.announcement_top .toggle-close{
+	bottom:0
+}
+.themify_announcement.bar.announcement_bottom .toggle-close{
+	top:0;
+	border-radius:8px 8px 0 0;
+}
+.themify_announcement .toggle-close:hover{
+	text-decoration:none
+}
+.themify_announcement.collapsed{
+	padding:0
+}
+.themify_announcement .toggle-close:before{
+	content:"\64"
+}
+.themify_announcement.announcement_bottom .toggle-close:before{
+	content:"\75";
+}
+/* TIMER
+================================================ */
+.themify_announcement .timer{
+	background:rgba(0,0,0,.05);
+	height:1px;
+	width:100%;
+	position:relative;
+	margin-top:5px
+}
+.themify_announcement .timer-bar{
+	background:rgba(0,0,0,.3);
+	position:absolute;
+	height:1px;
+	max-width:100%
+}
+/************************************************************************************
+ANNOUNCEMENT SHORTCODE
+*************************************************************************************/
+.themify_announcement.shortcode{
+	padding:1em 1.3em;
+	margin:0 0 2em;
+	position:relative; /*required for clip/bookmark style */
+}
+.themify_announcement.shortcode .carousel-nav-wrap{
+	position:static;
+	margin:1em 0 0
+}
+/************************************************************************************
+ANNOUNCEMENT WIDGET
+*************************************************************************************/
+.themify_announcement.widget{
+	padding:1em 1.3em;
+	position:relative; /*required for clip/bookmark style */
+}
+.themify_announcement.widget .carousel-nav-wrap{
+	position:static;
+	margin:1em 0 0
+}
+/************************************************************************************
+COLUMN SHORTCODE
+*************************************************************************************/
+.themify_announcement .shortcode.col4-1,
+.themify_announcement .shortcode.col4-2,
+.themify_announcement .shortcode.col4-3,
+.themify_announcement .shortcode.col3-1,
+.themify_announcement .shortcode.col3-2,
+.themify_announcement .shortcode.col2-1{
+	margin-left:3.2%;
+	float:left
+}
+.themify_announcement .shortcode.col4-1{
+	width:22.6%
+}
+.themify_announcement .shortcode.col4-2, 
+.themify_announcement .shortcode.col2-1{
+	width:48.4%
+}
+.themify_announcement .shortcode.col4-3{
+	width:74.2%
+}
+.themify_announcement .shortcode.col3-1{
+	width:31.2%
+}
+.themify_announcement .shortcode.col3-2{
+	width:65.6%
+}
+.themify_announcement .shortcode.col.first,
+.themify_announcement .shortcode.col4-1.first,
+.themify_announcement .shortcode.col4-2.first,
+.themify_announcement .shortcode.col4-3.first,
+.themify_announcement .shortcode.col3-1.first,
+.themify_announcement .shortcode.col3-2.first,
+.themify_announcement .shortcode.col2-1.first{
+	margin-left:0;
+	clear:left
+}
+/* columns in widget */
+.themify_announcement.widget .col4-1,
+.themify_announcement.widget .col4-2,
+.themify_announcement.widget .col4-3,
+.themify_announcement.widget .col3-1,
+.themify_announcement.widget .col3-2,
+.themify_announcement.widget .col2-1{
+	margin-left:0;
+	width:auto;
+	max-width:100%;
+	float:none;
+	clear:both
+}
+
+/************************************************************************************
+BUTTON SHORTCODE
+*************************************************************************************/
+.themify_announcement a.shortcode.button{
+	text-decoration:none!important;
+	color:#333!important;
+	line-height:100%;
+	white-space:nowrap;
+	padding:.5em 1em;
+	margin:0 .2em .3em 0;
+	border:solid 1px #aaa;
+	background-color:#f5f5f5;
+	vertical-align:middle;
+	display:inline-block;
+	text-shadow:0 1px 0 rgba(255,255,255,.2);
+	border-radius:.3em;
+	box-shadow:0 1px 0 rgba(0,0,0,.05), inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 0 rgba(255,255,255,.1)
+}
+.themify_announcement a.shortcode.button:hover{
+	text-decoration:none;
+	background-color:#fff
+}
+/* button colors */
+.themify_announcement a.shortcode.button.yellow{
+	border-color:#f2bd00;
+	background-color:#ffe20b
+}
+.themify_announcement a.shortcode.button.yellow:hover{
+	background-color:#fff21e
+}
+.themify_announcement a.shortcode.button.yellow.outline{
+	color:#ffe20b!important;
+	border-color:#ffe20b
+}
+.themify_announcement a.shortcode.button.orange{
+	border-color:#b57400;
+	background-color:#f9800f;
+	color:#fff!important;
+	text-shadow:0 -1px 0 rgba(0,0,0,.2)
+}
+.themify_announcement a.shortcode.button.orange:hover{
+	background-color:#ff9a22
+}
+.themify_announcement a.shortcode.button.orange.outline{
+	color:#f9800f!important;
+	border-color:#f9800f
+}
+.themify_announcement a.shortcode.button.blue{
+	border-color:#0087b5;
+	background-color:#49b3fc;
+	color:#fff!important;
+	text-shadow:0 -1px 0 rgba(0,0,0,.2)
+}
+.themify_announcement a.shortcode.button.blue:hover{
+	background-color:#76c7ff
+}
+.themify_announcement a.shortcode.button.blue.outline{
+	color:#49b3fc!important;
+	border-color:#49b3fc
+}
+.themify_announcement a.shortcode.button.green{
+	border-color:#5a881d;
+	background-color:#76ab3b;
+	color:#fff!important;
+	text-shadow:0 -1px 0 rgba(0,0,0,.2)
+}
+.themify_announcement a.shortcode.button.green:hover{
+	background-color:#90c356
+}
+.themify_announcement a.shortcode.button.green.outline{
+	color:#76ab3b!important;
+	border-color:#76ab3b
+}
+.themify_announcement a.shortcode.button.red{
+	border-color:#b00704;
+	background-color:#e41d24;
+	color:#fff!important;
+	text-shadow:0 -1px 0 rgba(0,0,0,.2)
+}
+.themify_announcement a.shortcode.button.red:hover{
+	background-color:#fb4e55
+}
+.themify_announcement a.shortcode.button.red.outline{
+	color:#e41d24!important;
+	border-color:#e41d24
+}
+.themify_announcement a.shortcode.button.black{
+	border-color:#000;
+	background-color:#111;
+	color:#fff!important;
+	text-shadow:0 -1px 0 rgba(0,0,0,.8)
+}
+.themify_announcement a.shortcode.button.black:hover{
+	background-color:#000
+}
+.themify_announcement a.shortcode.button.black.outline{
+	color:#000!important;
+	border-color:#000
+}
+.themify_announcement a.shortcode.button.purple{
+	border-color:#400a5c;
+	background-color:#7933ac;
+	color:#fff!important;
+	text-shadow:0 -1px 0 rgba(0,0,0,.6)
+}
+.themify_announcement a.shortcode.button.purple:hover{
+	background-color:#9655c6
+}
+.themify_announcement a.shortcode.button.purple.outline{
+	color:#7933ac!important;
+	border-color:#7933ac
+}
+.themify_announcement a.shortcode.button.gray{
+	border-color:#767676;
+	background-color:#888;
+	color:#fff!important;
+	text-shadow:0 -1px 0 rgba(0,0,0,.2)
+}
+.themify_announcement a.shortcode.button.gray:hover{
+	background-color:#adadad
+}
+.themify_announcement a.shortcode.button.gray.outline{
+	color:#888!important;
+	border-color:#888
+}
+/* light color */
+.themify_announcement a.shortcode.button.white,
+.themify_announcement a.shortcode.button.white:hover{
+	color:#fff!important;
+	border-color:#fff;
+	background-color:#fff
+}
+
+.themify_announcement a.shortcode.button.light-yellow{
+	border-color:#d5d28a;
+	background-color:#fef8a5
+}
+.themify_announcement a.shortcode.button.light-yellow:hover{
+	background-color:#fefcdf
+}
+.themify_announcement a.shortcode.button.light-yellow.outline{
+	color:#fef8a5!important;
+	border-color:#fef8a5
+}
+
+.themify_announcement a.shortcode.button.light-blue{
+	border-color:#a4cad9;
+	background-color:#c5efff
+}
+.themify_announcement a.shortcode.button.light-blue:hover{
+	background-color:#e9f9ff
+}
+.themify_announcement a.shortcode.button.light-blue.outline{
+	color:#c5efff!important;
+	border-color:#c5efff
+}
+.themify_announcement a.shortcode.button.light-green{
+	border-color:#bed49a;
+	background-color:#ebf8d6
+}
+.themify_announcement a.shortcode.button.light-green:hover{
+	background-color:#f9fff0
+}
+.themify_announcement a.shortcode.button.light-green.outline{
+	color:#ebf8d6!important;
+	border-color:#ebf8d6
+}
+
+.themify_announcement a.shortcode.button.pink{
+	border-color:#e6adc6;
+	background-color:#facde1
+}
+.themify_announcement a.shortcode.button.pink:hover{
+	background-color:#fdecf3
+}
+.themify_announcement a.shortcode.button.pink.outline{
+	color:#facde1!important;
+	border-color:#facde1
+}
+
+.themify_announcement a.shortcode.button.lavender{
+	border-color:#ccb7e1;
+	background-color:#ecd9ff
+}
+.themify_announcement a.shortcode.button.lavender:hover{
+	background-color:#f7f0fe
+}
+.themify_announcement a.shortcode.button.lavender.outline{
+	color:#ecd9ff!important;
+	border-color:#ecd9ff
+}
+/* gradient */
+.themify_announcement a.shortcode.button.gradient{
+	background-image:linear-gradient(to bottom, rgba(255,255,255,0.35) 0, rgba(170,170,170,0.15) 66%, rgba(0,0,0,0.05) 100%)
+}
+/* flat */
+.themify_announcement a.shortcode.button.flat{
+	background-image:none;
+	box-shadow:none;
+	border:none;
+	text-shadow:none
+}
+/* outline */
+.themify_announcement a.shortcode.button.outline{
+	border-style:solid;
+	border-width:1px
+}
+.themify_announcement a.shortcode.button.outline,
+.themify_announcement a.shortcode.button.outline:hover{
+	background:none;
+	box-shadow:none;
+	text-shadow:none
+}
+/* button size */
+.themify_announcement a.shortcode.button.small{
+	font-size:80%;
+	font-weight:normal
+}
+.themify_announcement a.shortcode.button.large{
+	font-size:120%;
+	font-weight:bold
+}
+.themify_announcement a.shortcode.button.xlarge{
+	font-size:150%;
+	font-weight:bold
+}
+/* button shape */
+.themify_announcement a.shortcode.button.rect{
+	border-radius:0
+}
+.themify_announcement a.shortcode.button.rounded{
+	border-radius:20em
+}
+/* button embossed */
+.themify_announcement a.shortcode.button.embossed{
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.2), inset 0 -3px 0 rgba(255,255,255,.2)
+}
+.themify_announcement a.shortcode.button.embossed.small,
+.themify_announcement a.shortcode.button.small.embossed{
+	box-shadow:inset 0 -1px 0 rgba(0,0,0,.2), inset 0 -2px 0 rgba(255,255,255,.2)
+}
+.themify_announcement a.shortcode.button.embossed.large,
+.themify_announcement a.shortcode.button.large.embossed{
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.5), inset 0 -3px 0 rgba(0,0,0,.2), inset 0 -4px 0 rgba(255,255,255,.2)
+}
+.themify_announcement a.shortcode.button.embossed.xlarge,
+.themify_announcement a.shortcode.button.xlarge.embossed{
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.5), inset 0 -3px 0 rgba(0,0,0,.2), inset 0 -5px 0 rgba(255,255,255,.2)
+}
+/* button active */
+.shortcode.button:active{
+	position:relative;
+	top:1px
+}
+/************************************************************************************
+MAP SHORTCODE
+*************************************************************************************/
+.themify_announcement .shortcode.map .map-container{
+	margin:0 0 1em;
+	border:none
+}
+.themify_announcement .map img{ 
+	max-width:none!important 
+}
+.themify_announcement .gmnoprint{
+	overflow-wrap:normal
+}
+/************************************************************************************
+RESPONSIVE
+*************************************************************************************/
+@media screen and (max-width:1260px){
+	.themify_announcement.bar .announcement_container{
+		max-width:94%
+	}
+}
+@media screen and (max-width:780px){
+	/* bar */
+	.themify_announcement.bar{
+		font-size:.9em
+	}
+	.themify_announcement.bar .announcement_post{
+		padding-right:20px
+	}
+	.themify_announcement.bar .announcement_content{
+		display:inline
+	}
+	.admin-bar .themify_announcement.bar.fixed{
+		top:0
+	}
+}
+@media screen and (max-width:600px){
+	.themify_announcement .shortcode.col4-1,
+	.themify_announcement .shortcode.col4-2,
+	.themify_announcement .shortcode.col4-3,
+	.themify_announcement .shortcode.col3-1,
+	.themify_announcement .shortcode.col3-2,
+	.themify_announcement .shortcode.col2-1{
+		margin-left:0;
+		width:auto;
+		max-width:100%;
+		float:none;
+		clear:both
+	}
+	.themify_announcement.bar .carousel-nav-wrap{
+		position:static;
+		margin-top:8px
+	}
+	.themify_announcement .close{
+		top:0
+	}
+	.themify_announcement.default.bar .announcement_title,
+	.themify_announcement.notes.bar .announcement_title{
+		float:none;
+		margin-bottom:10px
+	}
+}
+/* prevent overflowing on smaller display */
+@media screen and (max-height:900px){
+	.themify_announcement.bar .more_wrap{
+		overflow:auto; /* prevent overflowing the page */
+		max-height:700px
+	}
+}
+@media screen and (max-height:800px){
+	.themify_announcement.bar .more_wrap{
+		max-height:600px
+	}
+}
+@media screen and (max-height:700px){
+	.themify_announcement.bar .more_wrap{
+		max-height:500px
+	}
+}
+@media screen and (max-height:600px){
+	.themify_announcement.bar .more_wrap{
+		max-height:400px
+	}
+}
+@media screen and (max-height:500px){
+	.themify_announcement.bar .more_wrap{
+		max-height:300px
+	}
+}
+@media screen and (max-height:400px){
+	.themify_announcement.bar .more_wrap{
+		max-height:250px
+	}
+}
+@media screen and (max-height:300px){
+	.themify_announcement.bar .more_wrap{
+		max-height:150px
+	}
+}
+/** RTL */
+.rtl .themify_announcement.bar .announcement_content{
+	margin:3px 0 8px 80px
+}
+.rtl .themify_announcement.bar .announcement_title{
+	margin:-2px 0 0 1.4em
+}
+.rtl .themify_announcement.bar .announcement_title:after{
+	right:auto;
+	left:-.65em;
+	border-left-width:0;
+	border-right:solid .8em #e74c3c
+}
+.rtl .themify_announcement .close{
+	right:auto;
+	left:0
+}
+.rtl .themify_announcement.bar .carousel-nav-wrap{
+	right:auto;
+	left:20px
+}
+.rtl .themify_announcement.shortcode .carousel-nav-wrap,
+.rtl .themify_announcement.widget .carousel-nav-wrap,
+.rtl .themify_announcement.bar .carousel-nav-wrap{
+	direction:ltr
+}
+.rtl .themify_announcement.shortcode .announcement_title{
+	margin-right:0;
+	margin-left:.8em
+}
+.rtl .themify_announcement .announcement_post{
+	text-align:right
+}
+.rtl .themify_announcement.white.bar .announcement_title:after,
+.rtl .themify_announcement.yellow.bar .announcement_title:after,
+.rtl .themify_announcement.blue .announcement_title:after,
+.rtl .themify_announcement.green .announcement_title:after,
+.rtl .themify_announcement.orange .announcement_title:after,
+.rtl .themify_announcement.pink .announcement_title:after{
+	border-right-color:#000
+}
+.rtl .themify_announcement.purple .announcement_title:after,
+.rtl .themify_announcement.gray .announcement_title:after{
+	border-right-color:#ffea00
+}

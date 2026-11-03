@@ -1,0 +1,11 @@
+.DS_Store
+
+# Local capture diagnostics and operator notes are not part of the public site.
+documents/
+public/
+docs/archive-report.json
+docs/feed
+docs/comments/feed
+
+# The loading splash was removed from the captured HTML.
+docs/wp-content/plugins/loading-page/
